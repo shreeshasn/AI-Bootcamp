@@ -27,3 +27,7 @@ model.add(Dense(10, activation='softmax'))
 model.compile(optimizer='Adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 model.fit(x_train, y_train, epochs=10, batch_size=64)
+
+(loss , accuracy) = model.evaluate(x_test, y_test)
+print(f"Test Loss: {loss}")
+print(f"Test Accuracy: {accuracy*100}%")

@@ -26,7 +26,7 @@ model.add(Dense(10, activation='softmax'))
 
 model.compile(optimizer='Adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
-result = model.fit(x_train, y_train, epochs=10, batch_size=64, validation_split=0.2)
+result = model.fit(x_train, y_train, epochs=100, batch_size=64, validation_split=0.2)
 
 (loss , accuracy) = model.evaluate(x_test, y_test)
 print(f"Test Loss: {loss:.02f}")
@@ -34,10 +34,10 @@ print(f"Test Accuracy: {accuracy*100:.02f}%")
 # print(result.history)
 
 #Visualization
-plt.plot(result.history['accuracy'], label='train accuracy', color='red', linestyle='--')
-plt.plot(result.history['val_accuracy'], label='validation accuracy', color='blue', linestyle=':')
-plt.plot(result.history['loss'], label='train loss', color='green', linestyle='-')
-plt.plot(result.history['val_loss'], label='validation loss', color='yellow', linestyle='-.')
+plt.plot(result.history['accuracy'], label='train accuracy', color='red')
+plt.plot(result.history['val_accuracy'], label='validation accuracy', color='blue')
+plt.plot(result.history['loss'], label='train loss', color='green')
+plt.plot(result.history['val_loss'], label='validation loss', color='purple')
 plt.title('Epochs v Accuracy / Loss Values')
 plt.xlabel('Epochs')
 plt.ylabel('Values')
